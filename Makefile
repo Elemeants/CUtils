@@ -3,6 +3,8 @@ CC_FLAGS = -Os -Wall
 
 BIN_FOLDER = ./bin
 
+all: configure float2hex modbus_crc16_calc
+
 configure:
 	@mkdir ${BIN_FOLDER}
 
@@ -12,8 +14,6 @@ ifeq ($(OS),Windows_NT)
 else
 	@rm -f ${BIN_FOLDER}/*
 endif
-
-all: float2hex modbus_crc16_calc
 
 float2hex:
 	@echo Compiling Float2Hex...
